@@ -28,6 +28,8 @@ def driver():
     driver.navigation(base_url)
 
     yield driver
+
+    # Remove/Uncomment the line below to close the browser being opened
     # driver.close_driver()
 
 
@@ -132,10 +134,12 @@ def test_ad_publishing_page_two(driver):
     driver.click_on(first_next_btn)
 
 
-    # Choosing Handicapped Access for example
-    # After many tries, the solution I found for the dynamic ID assignment, is to address to the first checkbox/input by listing all classes that lead to it.
-    # Then, finding the label wrapping it (with a class called "ff-el-form-check-label") <-which is its "ancestor" (XPath axis). 
-    # And finally, clicking it.
+    """
+    Choosing Handicapped Access for example
+    After many tries, the solution I found for the dynamic ID assignment, is to address to the first checkbox/input by listing all classes that lead to it.
+    Then, finding the label wrapping it (with a class called "ff-el-form-check-label") <-which is its "ancestor" (XPath axis). 
+    And finally, clicking it.
+    """
     handicap_opt_input = driver.get_web_element("CSS_SELECTOR", ".ff_el_checkable_photo_holders .ff-el-form-check-input.ff-el-form-check-checkbox:first-of-type")
     handicap_clickable_label = handicap_opt_input.find_element(By.XPATH, "./ancestor::label[contains(@class, 'ff-el-form-check-label')]")
     driver.click_on(handicap_clickable_label)
@@ -206,4 +210,18 @@ def test_validate_details(driver):
     title = driver.get_web_element("CSS_SELECTOR", "h1.elementor-heading-title").text
     assert title == "כרמיאל 5/5"
 
-    # Continue the rest....
+    asset_stat = driver.get_web_element("CSS_SELECTOR", ".elementor-element-7eac330 > div:nth-child(1) > ul:nth-child(1) > li:nth-child(1) > span:nth-child(2)").get_attribute("innerHTML")
+    assert asset_stat == "<strong>מצב הנכס:</strong> חדש מקבלן (לא גרו בנכס)"
+
+    meter_amoun = driver.get_web_element("CSS_SELECTOR", ".elementor-element-7eac330 > div:nth-child(1) > ul:nth-child(1) > li:nth-child(2) > span:nth-child(2)").get_attribute("innerHTML")
+    assert meter_amoun == "<strong> מ\"ר בנוי: </strong> 140"
+
+    terrace_amoun = driver.get_web_element("CSS_SELECTOR", ".elementor-element-7eac330 > div:nth-child(1) > ul:nth-child(1) > li:nth-child(3) > span:nth-child(2)").get_attribute("innerHTML")
+    assert terrace_amoun == "<strong> מרפסות: </strong> 1"
+
+
+
+
+    # Additional details assertions......#
+
+    #END OF CODE#
