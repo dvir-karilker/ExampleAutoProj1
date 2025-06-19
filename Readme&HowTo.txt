@@ -2,7 +2,7 @@ Notes:
 - Automation Project is in its Folder.
 - Other documents are in the main folder
 
-!BONUS! GitHub Link - https://github.com/dvir-karilker/KaleidooProj/tree/master
+!BONUS! GitHub Link - https://github.com/dvir-karilker/KaleidooProj/tree/main
 (git add .   |  git commit -m "bla bla"    |  git push      (<- already established connection in my VS Code)
 
 TO RUN CODE:
