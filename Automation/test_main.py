@@ -10,8 +10,8 @@ import os
 base_url = "https://homme.co.il/wp-login.php"
 
 # Credentials
-user_password = "tester123!@#qwe"
-user_username = "tester"
+user_password = ""
+user_username = ""
 
 
 # Will be used for image uploading process
