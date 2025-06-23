@@ -3,7 +3,9 @@ Notes:
 - Other documents are in the main folder
 
 !BONUS! GitHub Link - https://github.com/dvir-karilker/KaleidooProj/tree/main
-(git add .   |  git commit -m "bla bla"    |  git push      (<- already established connection in my VS Code)
+(git add .   |  git commit -m "bla bla"    |  git push      (<- already established connection in my VS Code)  |
+
+(git push origin main   (<-pushing to main))
 
 TO RUN CODE:
 after extracting ALL, navigate to "Automation" folder. Inside, right-click and open the Terminal.

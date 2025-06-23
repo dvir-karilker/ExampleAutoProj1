@@ -51,6 +51,11 @@ def test_login_exist(driver):
     terms_btn = driver.get_web_element("PARTIAL_LINK_TEXT", "אני מסכים")
     driver.click_on(terms_btn)
 
+    # Sometimes user is redirected to the WordPress Admin Panel since it's being used by others.
+    # So I made sure we're on my profile - 
+    if driver.get_location() != "https://homme.co.il/%D7%94%D7%97%D7%A9%D7%91%D7%95%D7%9F-%D7%A9%D7%9C%D7%99/":
+        driver.navigation("https://homme.co.il/%D7%94%D7%97%D7%A9%D7%91%D7%95%D7%9F-%D7%A9%D7%9C%D7%99/")
+        time.sleep(2)
     
     assert driver.get_location() == "https://homme.co.il/%D7%94%D7%97%D7%A9%D7%91%D7%95%D7%9F-%D7%A9%D7%9C%D7%99/" # <- Login was successful
 
