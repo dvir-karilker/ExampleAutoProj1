@@ -195,7 +195,7 @@ def test_ad_publishing_final_page(driver):
     publish_btn = driver.get_web_element("CSS_SELECTOR", ".ff-btn-submit")
     driver.click_on(publish_btn)
 
-    time.sleep(4) #<-Waiting for redirection
+    time.sleep(5) #<-Waiting for redirection
     assert driver.get_location() == "https://homme.co.il/appartments/"
     
 
